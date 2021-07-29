@@ -1,0 +1,15 @@
+{
+    "timeZone": "Asia/Tokyo",
+    "dependencies": {},
+    "exceptionLogging": "STACKDRIVER",
+    "runtimeVersion": "V8",
+    "dataStudio": {
+      "name": "FIWARE Orion Connector",
+      "logoUrl": "https://static.wixstatic.com/media/83bf7d_52bcd43f86134be0a80490cb85e5b8ff~mv2.png/v1/fit/w_2500,h_1330,al_c/83bf7d_52bcd43f86134be0a80490cb85e5b8ff~mv2.png",
+      "company": "Okinawa Open Laboratory, General Incorporated Association",
+      "companyUrl": "https://www.okinawaopenlabs.org/",
+      "addonUrl": "https://github.com/OkinawaOpenLaboratory/FIWAREOrionConnector",
+      "supportUrl": "https://github.com/OkinawaOpenLaboratory/FIWAREOrionConnector/issues",
+      "description": "FIWARE Orion Connector"
+    }
+  }
