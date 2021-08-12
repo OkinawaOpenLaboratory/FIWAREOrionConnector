@@ -80,6 +80,8 @@ function getFields(request) {
         type = types.LATITUDE_LONGITUDE
       } else if (attributes[attribute]["types"][index] == "StructuredValue") {
         type = types.TEXT
+      } else if (attributes[attribute]["types"][index] == "URL") {
+        type = types.URL
       }
     }
     fields
@@ -177,6 +179,8 @@ function getFormattedData(response, requestedFields) {
           row.push(entity[attrName.getId()]["value"]);
         } else if (entity[attrName.getId()]["type"] == "StructuredValue") {
           row.push(null);
+        } else if (entity[attrName.getId()]["type"] == "URL") {
+          row.push(entity[attrName.getId()]["value"]);
         } else {
           if (attrName.getType() == cc.FieldType.TEXT) {
             row.push("");
