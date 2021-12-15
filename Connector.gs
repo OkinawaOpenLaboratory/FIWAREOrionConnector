@@ -73,7 +73,7 @@ function getFields(request) {
       } else if (attributes[attribute]["types"][index] == "Text") {
         type = types.TEXT;
       } else if (attributes[attribute]["types"][index] == "DateTime") {
-        type = types.YEAR_MONTH_DAY_HOUR
+        type = types.YEAR_MONTH_DAY_SECOND
       } else if (attributes[attribute]["types"][index] == "geo:json") {
         type = types.LATITUDE_LONGITUDE
       } else if (attributes[attribute]["types"][index] == "geo:point") {
@@ -170,9 +170,10 @@ function getFormattedData(response, requestedFields) {
       } else if (entity[attrName.getId()]) {
         if (entity[attrName.getId()]["type"] == "Number" ||
             entity[attrName.getId()]["type"] == "Float" ||
-            entity[attrName.getId()]["type"] == "Text" ||
-            entity[attrName.getId()]["type"] == "DateTime") {
+            entity[attrName.getId()]["type"] == "Text") {
           row.push(entity[attrName.getId()]["value"]);
+        } else if (entity[attrName.getId()]["type"] == "DateTime") {
+          row.push(Utilities.formatDate(new Date(entity[attrName.getId()]["value"]), "JST", "yyyyMMddHHmmss"));
         } else if (entity[attrName.getId()]["type"] == "geo:json") {
           row.push(entity[attrName.getId()]["value"]['coordinates'][1] + "," + entity[attrName.getId()]["value"]['coordinates'][0]);
         } else if (entity[attrName.getId()]["type"] == "geo:point") {
